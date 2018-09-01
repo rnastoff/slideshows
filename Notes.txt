@@ -1,0 +1,88 @@
+EXPLANATION OF ENDLESS
+
+IMAGES ARRAY
+-The num property is used for sorting and keeping track of images
+
+
+IMAGENUM
+-The index of the image that's currently showing
+
+-Because of arrange constantly re-arranging the object,
+the numbers are not permanently linked to the object
+
+-With 4 images, imageNum is really only 1 or 2 (2nd and 3rd images)
+-It's only 0 or 3, very briefly, before arrange() re-arranges the object
+
+
+
+
+IMAGEPOS
+-This is the current position of the "slides" div (the div that holds all the images)
+-This works the same as imageNum, only it handles the position of the div
+-It's only ever -700, or -1400 (the 2nd and 3rd images (1,2))
+
+
+
+
+
+
+
+ARRANGE
+-This only happens after a transition
+
+Left
+-If we're at the beginning
+ -Pop off element at the end
+ -Add the element to the beginning
+ *Remove transition from "slides"
+ *Change the element's position (setting the pos to -700, or the 2nd image in the array)
+ *Add transition to "slides"
+ -Change the imageNum to 1 (2nd element)
+ -Change ImagePos to the 2nd element (-700)
+ -Add Images back to page (the currently viewed image should not move)
+
+Right
+-If we're at the end
+ -Remove element from beginning of Array
+ -Push the element on to the end of the array
+ *Remove transition from "slides"
+ *Change the elements position to 2nd from last (-imageWidth * (images.length-2))
+ *Add the transition to "slides"
+ -Change the imageNum to second from last (images.length-2)
+ -Change the imagePos to second from last (-imageWidth * (images.length-2))
+ -Add images back to page (the currently viewed image should not move)
+
+
+IMAGENUM
+-This is the index of the currently viewed image
+-This number is not permanently linked to specific images, because the array get re-arranged
+
+DOTNUM
+-This num is linked to images[i].num. In other words, 0 is ALWAYS Chicago
+-This is needed specifically for image-selection (dots)
+
+
+
+
+DOT CLICK
+-Reset the array
+-Get current position of the image
+-Change the position after the reset (so it stays on the same image)
+-Pull off the number from the dot class (d0,d1,etc). num
+-Set the imageNum = dotnum. (They're both the same after a reset)
+-Move the slide
+-Change imageNum and dotNum to new image. This happens before the arrange() function
+-ChangeDot
+
+
+CHANGEPOS
+-This removes the transition, then changes the margin-left, then re-adds the transition
+-The offsetHeight is used to force a reflow
+
+
+
+
+
+
+
+

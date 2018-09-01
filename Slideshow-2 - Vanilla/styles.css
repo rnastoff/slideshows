@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #111;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+	width: 100%;
+}
+
+.text-box {
+	margin: 0 auto;
+	width: 700px;
+}
+h1 {
+	color: #fff;
+	text-align: center;
+	margin: 0;
+	font-weight: 600;
+	font-size: 40px;
+}
+h3 {
+	color: #fff;
+	text-align: center;
+	font-weight: 400;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.slideshow {
+	margin: 0 auto;
+	height: 350px;
+	width: 700px;
+	position: relative;
+	overflow: hidden; /* comment out to see what's happening */
+}
+
+#slides {
+	width: 4000px; /* width of all images combined */
+	margin-left: 0px; /* this shifts everything */
+	transition: margin-left 0.5s;
+}
+
+.slide {
+	float: left;
+}
+
+h2 {
+	color: #fff;
+	display: block;
+	font-weight: 500;
+	font-size: 20px;
+	position: absolute;
+	bottom: 7%;
+	text-align: center;
+	width: 100%;	
+}
+
+#arrow-left {
+	position: absolute;
+	left: 1%;
+	top: 39%;
+}
+#arrow-right {
+	position: absolute;
+	right: 1%;
+	top: 39%;
+}
+.fas {
+	color: #fff;
+	color: rgba(255,255,255, 0.5);
+	font-size: 60px;
+	transition: color 0.5s;
+}
+.fas:hover {
+	color: rgba(255,255,255,0.9);
+	cursor: pointer;
+	transition: color 0.5s;	
+}
+
+.image-select {
+	position: absolute;
+	bottom: 1%;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.dot {
+	border: 3px solid #fff;
+	border-radius: 100%;
+	cursor: pointer;
+	display: inline-block;
+	height: 10px;
+	margin-left: 5px;
+	width: 10px;
+}
+
+
+
+
+
+
